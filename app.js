@@ -1438,7 +1438,8 @@ const stuff = [
 ]
 
 document.addEventListener('scroll', function () {
-  if (html.scrollTop + html.clientHeight >= html.scrollHeight) {
+  if (html.scrollTop + (html.clientHeight * 1.5) >= html.scrollHeight) {
+    console.log(html.scrollTop, html.clientHeight, html.scrollHeight)
     for (let n = 0; n < 30; n++) {
       const par = document.createElement("p");
       par.innerText += stuff[Math.floor(Math.random() * stuff.length)];
