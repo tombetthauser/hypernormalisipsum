@@ -26,10 +26,6 @@ hr {
   margin-top: 40px;
 }
 
-p {
-  width: 75%;
-}
-
 p:nth-of-type(1) {
   padding-top: 15px;
 }
