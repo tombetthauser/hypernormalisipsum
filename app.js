@@ -4,38 +4,37 @@ const html = document.querySelector("html");
 const title = document.querySelector("title");
 const br = document.createElement("br")
 
-// const ptag1 = document.createElement("span");
-// const ptag2 = document.createElement("span");
+let isPtags = false;
 
-// const ptext1 = document.createTextNode("<p>");
-// const ptext2 = document.createTextNode("</p>");
+const newSentence = () => {
+  const par = document.createElement("p");
+  const text = document.createTextNode(stuff[Math.floor(Math.random() * stuff.length)]);
 
+  const ptag1 = document.createElement("span");
+  const ptag2 = document.createElement("span");
 
+  ptag1.setAttribute("class", "pspan");
+  ptag2.setAttribute("class", "pspan");
+
+  if (!isPtags) ptag1.classList.add("hidden");
+  if (!isPtags) ptag2.classList.add("hidden");
+
+  ptag1.appendChild(document.createTextNode("<p>"));
+  ptag2.appendChild(document.createTextNode("</p>"));
+
+  par.appendChild(ptag1);
+  par.appendChild(text);
+  par.appendChild(ptag2);
+
+  return par;
+}
 
 const logger = arr => {
   for (let n = 0; n < 20; n++) {
-    const par = document.createElement("p");
-    const text = document.createTextNode(arr[Math.floor(Math.random() * arr.length)]);
-    
-    const ptag1 = document.createElement("span");
-    const ptag2 = document.createElement("span");
-
-    ptag1.setAttribute("class", "pspan hidden");
-    ptag2.setAttribute("class", "pspan hidden");
-
-    ptag1.appendChild(document.createTextNode("<p>"));
-    ptag2.appendChild(document.createTextNode("</p>"));
-
-    par.appendChild(ptag1);
-    par.appendChild(text);
-    par.appendChild(ptag2);
-
-    main.appendChild(par);
+    main.appendChild(newSentence());
   }
   setInterval(() => {
-    const par = document.createElement("p");
-    par.innerText +=arr[Math.floor(Math.random() * arr.length)];
-    main.appendChild(par);
+    main.appendChild(newSentence());
   }, 7500)
 }
 
@@ -1461,14 +1460,13 @@ document.addEventListener('scroll', function () {
   if (html.scrollTop + (html.clientHeight * 1.5) >= html.scrollHeight) {
     console.log(html.scrollTop, html.clientHeight, html.scrollHeight)
     for (let n = 0; n < 30; n++) {
-      const par = document.createElement("p");
-      par.innerText += stuff[Math.floor(Math.random() * stuff.length)];
-      main.appendChild(par);
+      main.appendChild(newSentence());
     }
   }
 });
 
 document.querySelector(".ptags").addEventListener('click', () => {
+  isPtags = !isPtags;
   document.querySelectorAll(".pspan").forEach(ele => {
     ele.classList.toggle("hidden");
   });
