@@ -23,7 +23,7 @@ a {
 }
 
 hr {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 p {
@@ -37,4 +37,10 @@ p:nth-of-type(1) {
 a:nth-of-type(2) {
   font-size: 13px;
   display: block;
+}
+
+.ptags {
+  margin-top: 15px;
+  display: block;
+  cursor: pointer;
 }

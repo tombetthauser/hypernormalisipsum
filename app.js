@@ -4,10 +4,33 @@ const html = document.querySelector("html");
 const title = document.querySelector("title");
 const br = document.createElement("br")
 
+// const ptag1 = document.createElement("span");
+// const ptag2 = document.createElement("span");
+
+// const ptext1 = document.createTextNode("<p>");
+// const ptext2 = document.createTextNode("</p>");
+
+
+
 const logger = arr => {
   for (let n = 0; n < 20; n++) {
     const par = document.createElement("p");
-    par.innerText += arr[Math.floor(Math.random() * arr.length)];
+    // par.innerText += arr[Math.floor(Math.random() * arr.length)];
+    const text = document.createTextNode(arr[Math.floor(Math.random() * arr.length)]);
+    
+    const ptag1 = document.createElement("span");
+    const ptag2 = document.createElement("span");
+
+    ptag1.setAttribute("class", "hidden");
+    ptag2.setAttribute("class", "hidden");
+
+    ptag1.appendChild(document.createTextNode("<p>"));
+    ptag2.appendChild(document.createTextNode("</p>"));
+
+    par.appendChild(ptag1);
+    par.appendChild(text);
+    par.appendChild(ptag2);
+
     main.appendChild(par);
   }
   setInterval(() => {
@@ -1445,5 +1468,9 @@ document.addEventListener('scroll', function () {
     }
   }
 });
+
+document.querySelector(".ptags").addEventListener('click', () => {
+  alert("click!")
+})
 
 logger(stuff);
