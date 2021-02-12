@@ -393,7 +393,7 @@ const stuff = [
   `And Gaddafi was going to happily play along, because it would turn him into a famous global figure.`,
   `Colonel Gaddafi had taken power in a coup in the 1970s but from the very start, he was convinced that he was more than just the leader of one country.`,
   `He believed that he was an international revolutionary whose destiny was to challenge the power of the West.`,
-  `Gentlemen, the Queen.`,
+  `"Gentlemen, the Queen."`,
   `[GOD SAVE THE QUEEN PLAYS]`,
   `When he was a young officer, Gaddafi had been sent to England for training and he had detested the patronising racism that he said he had found at the heart of British society.`,
   `"Yes, I attended a course."`,
