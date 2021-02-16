@@ -44,3 +44,11 @@ a:nth-of-type(2) {
 .hidden {
   display: none;
 }
+
+p {
+  display: inline;
+}
+
+p::after {
+  content: " ";
+}

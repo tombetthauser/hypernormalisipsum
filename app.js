@@ -30,7 +30,7 @@ const newSentence = () => {
 }
 
 const logger = arr => {
-  for (let n = 0; n < 20; n++) {
+  for (let n = 0; n < 50; n++) {
     main.appendChild(newSentence());
   }
   setInterval(() => {
@@ -1156,9 +1156,9 @@ const stuff = [
   `[CAR HORNS BLARE]`,
   `The crisis in Egypt.`,
   `[CHANTING AND SHOUTING]`,
-  `A march through our main streets.`,
-  `Looks like chaos.`,
-  `Looks like police is running around and a few hundred people walking down the street.`,
+  `"A march through our main streets."`,
+  `"Looks like chaos."`,
+  `"Looks like police is running around and a few hundred people walking down the street."`,
   `Then, almost immediately, the Arab Spring began.`,
   `The first revolution started in Tunisia, but it quickly spread to Egypt.`,
   `On January 25th 2011, thousands of Egyptians came out in groups across Cairo and then started moving towards Tahrir Square.`,
