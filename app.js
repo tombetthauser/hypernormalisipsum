@@ -6,9 +6,20 @@ const br = document.createElement("br")
 
 let isPtags = false;
 
+// (async () => {
+//   let raw = await fetch("https://raw.githubusercontent.com/tombetthauser/hypernormalisipsum/master/hypernormal.json", { mode: "no-cors" });
+//   json = await raw.json();
+//   sentence = json.text[Math.floor(Math.random() * json.text.length)];
+//   console.log(sentence);
+// })();
+
 const newSentence = () => {
   const par = document.createElement("p");
   const text = document.createTextNode(stuff[Math.floor(Math.random() * stuff.length)]);
+  // let text = await fetch("./hypernormal.json", { mode: "no-cors" });
+  // text = await text.json();
+  // console.log(text)
+  // text = text.text[Math.floor(Math.random() * stuff.length)];
 
   const ptag1 = document.createElement("span");
   const ptag2 = document.createElement("span");
@@ -29,13 +40,15 @@ const newSentence = () => {
   return par;
 }
 
-const logger = arr => {
+const logger = (arr) => {
   for (let n = 0; n < 50; n++) {
-    main.appendChild(newSentence());
+    const newSent = newSentence()
+    main.appendChild(newSent);
   }
-  setInterval(() => {
-    main.appendChild(newSentence());
-  }, 7500)
+  // setInterval(() => {
+  //   const newSent = newSentence()
+  //   main.appendChild(newSent);
+  // }, 7500)
 }
 
 const stuff = [

@@ -45,10 +45,10 @@ a:nth-of-type(2) {
   display: none;
 }
 
-p {
+/* p {
   display: inline;
 }
 
 p::after {
   content: " ";
-}
+} */
